@@ -19,7 +19,7 @@
         const rate = data.bitcoin.usd;
 
         // Calculate the equivalent USD amount
-        const convertedAmount = (usdAmount / rate).toFixed(2);
+        const convertedAmount = (usdAmount / rate).toFixed(5);
 
         // Display the result
         document.getElementById('result').textContent = 

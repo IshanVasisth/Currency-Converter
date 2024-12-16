@@ -1,0 +1,91 @@
+html{
+    background-color :rgb(244, 227, 227);
+    color : white;
+    background-image: url(./assets/Rocket-Emoji-18.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center 90px;
+    background-size: 50% auto;
+}
+body{
+    font-weight: 540;
+    font-size : 18px;
+}
+h1{
+    text-align: center;
+    color :rgba(11, 28, 28, 0.937)
+}
+.outer-box{
+    display : flex;
+    flex-direction: column;
+}
+.inner-box-1{
+    display : flex;
+    position : relative;
+    gap : 10px;
+    margin-left : 26%;
+    margin-top : 10px;
+    flex-direction : column ;
+    background-color: rgba(11, 28, 28, 0.937);
+    height : 180px;
+    width : 50%;
+    border-radius : 30px;
+    align-items: center;
+    padding : 10px;
+}
+.inner-box-2{
+    display : flex;
+    gap : 10px;
+    margin-left : 26%;
+    margin-top : 80px;
+    flex-direction : column ;
+    background-color: rgba(11, 28, 28, 0.937);
+    height : 180px;
+    width : 50%;
+    border-radius : 30px;
+    align-items: center;
+    padding : 10px;
+}
+.interchange{
+    height : 70px;
+    position : absolute;
+    border-radius : 50%;
+}
+.change-div{
+    display : flex;
+    justify-content: center;
+}
+.btcclass{
+    display : flex;
+    justify-content: center;
+}
+.btc{
+    width : 40px;
+    height : 40px;
+}
+.input-box{
+    position : absolute;
+    width : 80%;
+    top : 60%;
+    border-radius: 20px;
+    border : solid pink 2px;
+}
+.usdclass{
+    display : flex;
+    justify-content: center;
+}
+.usd{
+    width : 40px;
+    height : 40px;
+}
+button {
+    background-color: rgb(240, 67, 182);
+    color: white;
+    cursor: pointer;
+    position : absolute;
+    width : 82%;
+    top : 80%;
+}
+button:hover{
+    background-color : rgb(121, 1, 81);
+}

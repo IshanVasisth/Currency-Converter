@@ -1,34 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Realtime Currency Convertor</title>
-    </head>
-    <link rel="stylesheet" href="./style.css">
-    <body>
-        <h1>'''Convert Today, HODL Tomorrow'''</h1>
-        <div class="outer-box">
-            <div class="inner-box-1">
-                From  :
-                <div class="usdclass">
-                    <img src="./assets/dollar.png" class="usd">
-                    <p class="dollar"> USD</p>
-                </div>
-                <input type="number" id="usdAmt" class="input-box" placeholder="Enter USD amount" >
-                <button onclick="convertBTCtoUSD()">Convert to BTC</button> 
-            </div>
-            <div class="change-div">
-                <a href="./index.html"><img src="./assets/image copy.png"  class="interchange"></a>
-            </div>
-            <div class="inner-box-2">
-                To : 
-                <div class="btcclass">
-                    <img src="./assets/btc.png" class="btc">
-                    <p class="Bitcoins"> BTC</p>
-                </div>
-                <div id="result"></div>
-            </div>
-        </div>
-        <script src="index-rev.js" charset="UTF-8"></script>
-    </body>
-</html>
+    // API URL for BTC to USD conversion rate
+    const API_URL = "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd";
+
+    // Function to convert BTC to USD
+    async function convertBTCtoUSD() {
+      const usdAmount = document.getElementById('usdAmt').value;
+
+      if (!usdAmount || usdAmount <= 0) {
+        alert('Please enter a valid USD amount');
+        return;
+      }
+
+      try {
+        // Fetch the current BTC to USD rate
+        const response = await fetch(API_URL);
+        const data = await response.json();
+
+        // Extract the conversion rate
+        const rate = data.bitcoin.usd;
+
+        // Calculate the equivalent USD amount
+        const convertedAmount = (usdAmount / rate).toFixed(2);
+
+        // Display the result
+        document.getElementById('result').textContent = 
+          `${usdAmount} USD = ${convertedAmount} BTC`;
+      } catch (error) {
+        alert('Error fetching conversion rate: ' + error.message);
+      }
+    }
+ 
